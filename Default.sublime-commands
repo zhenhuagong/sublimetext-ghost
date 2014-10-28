@@ -1,0 +1,10 @@
+[
+  {
+    "caption": "Ghost: Post This File",
+    "command": "ghost_posts_post"
+  }
+  {
+    "caption": "Ghost: Update This File",
+    "command": "ghost_posts_update"
+  }
+]

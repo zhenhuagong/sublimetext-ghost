@@ -1,0 +1,17 @@
+{
+  // Config your host
+  "host": "http://domain.com",
+
+  // Config your credentials for Ghost Admin
+  "username": "your name",
+  "password": "your password",
+
+  // Ghost APIs List
+  "Posts"         : "/ghost/api/v0.1/posts",
+  "DB"            : "/ghost/api/v0.1/db/",
+  "Notifications" : "/ghost/api/v0.1/notifications/",
+  "Settings"      : "/ghost/api/v0.1/settings/",
+  "Tags"          : "/ghost/api/v0.1/tags/",
+  "Users"         : "/ghost/api/v0.1/users/",
+  "Auth"          : "/ghost/api/v0.1/authentication/token"
+}

@@ -1,0 +1,21 @@
+[
+  {
+    "id": "tools",
+    "children":
+    [
+      {
+        "caption": "Ghost",
+        "children":
+        [
+          {
+            "caption": "Post This File", "command": "ghost_posts_post"
+          },
+          {
+            "caption": "Update This File", "command": "ghost_posts_update"
+          }
+        ]
+      }
+    ]
+  }
+
+]
