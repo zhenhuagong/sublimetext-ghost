@@ -1,5 +1,5 @@
 {
-  // Config your host
+  // Config your host for Ghost
   "host": "http://domain.com",
 
   // Config your credentials for Ghost Admin
