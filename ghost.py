@@ -22,7 +22,7 @@ class GhostApiCallThread(threading.Thread):
         self.on_done = on_done
         self.result = None
         self.token = ''
-        self.timeout = 60
+        self.timeout = 1    # 1 second for http request timeout
         threading.Thread.__init__(self)
 
     def run(self):
@@ -77,9 +77,28 @@ class GhostCommand(object):
         settings = sublime.load_settings('Ghost.sublime-settings')
         username = settings.get('username')
         password = settings.get('password')
+        client_id = settings.get('client_id')
+
+        token_endpoint = self.get_endpoint("Auth")
+
         # Call Auth API
-        token = 'token'
-        return token
+        post_content = "grant_type=password&username=" + username + "&password=" + password + "&client_id=" + client_id
+        headers = {"Content-Type": "application/x-www-form-urlencoded"}
+
+        try:
+            http_request = urllib2.Request(token_endpoint, post_content, headers)
+            http_response = urllib2.urlopen(http_request, timeout=1)
+            result = http_response.read()
+
+            if not result.strip():
+                return result.access_token
+            return
+
+        except (urllib2.HTTPError) as (e):
+            err = '%s: HTTP error %s when call Ghost API' % (__name__, str(e.code))
+        except (urllib2.URLError) as (e):
+            err = '%s: URL error %s when call Ghost API' % (__name__, str(e.reason))
+        sublime.error_message(err)
 
     def get_endpoint(self, api):
         settings = sublime.load_settings('Ghost.sublime-settings')

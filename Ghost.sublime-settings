@@ -1,10 +1,13 @@
 {
+  // client id
+  "client_id": "Sublimetext-Ghost",
+
   // Config your host for Ghost
-  "host": "http://domain.com",
+  "host": "http://localhost:2368",
 
   // Config your credentials for Ghost Admin
-  "username": "your name",
-  "password": "your password",
+  "username": "test@example.com",
+  "password": "12345678",
 
   // Ghost APIs List
   "Posts"         : "/ghost/api/v0.1/posts",
