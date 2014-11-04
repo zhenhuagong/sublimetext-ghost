@@ -3,7 +3,7 @@
   "client_id": "Sublimetext-Ghost",
 
   // Config your host for Ghost
-  "host": "http://localhost:2368",
+  "host": "http://allmyverse.com",
 
   // Config your credentials for Ghost Admin
   "username": "test@example.com",
@@ -16,5 +16,6 @@
   "Settings"      : "/ghost/api/v0.1/settings/",
   "Tags"          : "/ghost/api/v0.1/tags/",
   "Users"         : "/ghost/api/v0.1/users/",
-  "Auth"          : "/ghost/api/v0.1/authentication/token"
+  "Auth"          : "/ghost/api/v0.1/authentication/token",
+  "test"          : "/testAPI.php"
 }

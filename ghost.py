@@ -79,7 +79,7 @@ class GhostCommand(object):
         password = settings.get('password')
         client_id = settings.get('client_id')
 
-        token_endpoint = self.get_endpoint("Auth")
+        token_endpoint = self.get_endpoint("test")
 
         # Call Auth API
         post_content = "grant_type=password&username=" + username + "&password=" + password + "&client_id=" + client_id
@@ -89,7 +89,7 @@ class GhostCommand(object):
             http_request = urllib2.Request(token_endpoint, post_content, headers)
             http_response = urllib2.urlopen(http_request, timeout=1)
             result = http_response.read()
-
+            print result
             if not result.strip():
                 return result.access_token
             return
